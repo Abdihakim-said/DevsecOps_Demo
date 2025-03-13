@@ -123,10 +123,6 @@ jobs:
       
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
-        env:
-        REGISTRY: ghcr.io
-        IMAGE_NAME: ${{ github.repository }}
-        IMAGE_TAG: sha-${{ github.sha }}
         with:
           image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${{ github.sha }}
           format: 'table'
