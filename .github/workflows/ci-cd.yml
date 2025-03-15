@@ -135,7 +135,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ghcr.io/Abdihakim-said/DevsecOps_Demo:sha-8f3a98da76e181b1c4f5145829ce332b7a51089e
+          image-ref: ghcr.io/Abdihakim-said/DevsecOps_Demo:${{ github.sha }}
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
